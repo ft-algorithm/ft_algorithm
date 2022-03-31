@@ -1,3 +1,11 @@
+/*
+ * Name    : https://leetcode.com/problems/implement-stack-using-queues/
+ * Purpose : 두 개의 큐로 스택 구현하기
+ * Author  : donghyuk
+ * Date    : 2022.03.31
+ * Notion  : https://graceful-atom-bb0.notion.site/Stack-6f54a284d8564f158f60423e4f316517
+ */
+
 #include <stdbool.h>
 #include <stdlib.h>
 
@@ -7,7 +15,7 @@ typedef struct s_queue{
     int front;     // Queue front 인덱스
     int rear;      // Queue rear 인덱스
     int max_size;  // Queue 최대 사이즈
-    int vals[];    // zero-length Array
+    int vals[];    // Queue 데이터 배열
 }   t_Queue;
 
 typedef struct s_myStack{
@@ -26,16 +34,19 @@ t_Queue *QueueCreate(int size)
     return (q);
 }
 
-/* isQueueEmpty
- *
- * 초기 생성 시 또는 pop 처리 후
- * Queue에 아무것도 없을 시 -1이 저장이 된다.
- * * */
+/*
+ * Queue가 비어있는지 확인
+ * * 초기 생성 시 또는 pop 처리 후 Queue에 데이터가 없을 시 -1로 저장이 되고 이를 체크한다.
+ * */
 bool isQueueEmpty(t_Queue *q)
 {
     return (q->front == -1);
 }
 
+/*
+ * srcQ의 데이터를 dstQ의 데이터로 옮기고 srcQ는 초기화
+ * * push함수 호출 시 mainQ의 데이터를 subQ의 데이터로 옮기는데 사용된다.
+ * */
 void moveQueueData(t_Queue *dst, t_Queue *src, int size)
 {
 	int	idx;
@@ -52,6 +63,9 @@ void moveQueueData(t_Queue *dst, t_Queue *src, int size)
     }
 }
 
+/*
+ * queue 데이터 입력
+ * */
 void enQueue(t_Queue *q, int val)
 {
     if (isQueueEmpty(q))
@@ -60,6 +74,9 @@ void enQueue(t_Queue *q, int val)
     q->vals[q->rear] = val;
 }
 
+/*
+ * queue 데이터 출력
+ * */
 int deQueue(t_Queue *q)
 {
     int result;
@@ -73,11 +90,17 @@ int deQueue(t_Queue *q)
     return (result);
 }
 
+/*
+ * Queue 데이터 크기 확인
+ * */
 bool isQueueFull(t_Queue *q)
 {
     return (q->max_size == q->rear);
 }
 
+/*
+ * Stack Create
+ * */
 t_MyStack* myStackCreate() {
     t_MyStack *stack;
 
@@ -87,6 +110,15 @@ t_MyStack* myStackCreate() {
     return (stack);
 }
 
+/*
+ * Stack Push
+ * * 데이터 입력 전
+ * *   Stack 내부의 mainQ의 사이즈가 MAX일 경우 현재 사이즈에서 2배로 늘려준다.
+ * * 데이터 입력
+ * *   mainQ의 데이터를 모두 subQ로 넘겨준다.
+ * *   그 후 빈 mainQ에 데이터를 입력한다. 그러면 해당 데이터는 front에 위치하게 한다.
+ * *   subQ의 데이터를 다시 mainQ에 넘겨준다.
+ * */
 void myStackPush(t_MyStack* stack, int val) {
     t_Queue *tempQ;
     int    max_size;
@@ -110,10 +142,18 @@ void myStackPush(t_MyStack* stack, int val) {
     }
 }
 
+/*
+ * Stack Pop
+ * 큐에서 데이터 반환 후 제거
+ * */
 int myStackPop(t_MyStack* stack) {
     return (deQueue(stack->mainQ));
 }
 
+/*
+ * Stack Top
+ * 큐에서 데이터 반환
+ * */
 int myStackTop(t_MyStack* stack) {
     t_Queue *mainQ;
 
@@ -121,10 +161,17 @@ int myStackTop(t_MyStack* stack) {
     return (mainQ->vals[mainQ->front]);
 }
 
+/*
+ * Stack Empty
+ * mainQ가 비었는지 확인
+ * */
 bool myStackEmpty(t_MyStack* stack) {
     return (stack->mainQ->front == -1);
 }
 
+/*
+ * Stack Free
+ * */
 void myStackFree(t_MyStack* stack) {
     free(stack->mainQ);
     free(stack->subQ);
