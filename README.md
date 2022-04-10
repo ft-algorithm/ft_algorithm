@@ -86,7 +86,7 @@
   
   <tr align=center>
     <td align=left><a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">convert-sorted-...</a></td>
-    <td id= nakkim  ></td>
+    <td id= nakkim  >✅</td>
     <td id= sile    ></td>
     <td id= nheo    ></td>
     <td id= donghyuk></td>
@@ -95,7 +95,7 @@
   
   <tr align=center>
     <td align=left><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">kth-largest...</a></td>
-    <td id= nakkim  ></td>
+    <td id= nakkim  >✅</td>
     <td id= sile    ></td>
     <td id= nheo    ></td>
     <td id= donghyuk></td>
@@ -107,7 +107,7 @@
 <table>
   <tr>
                             <!-- 노션 주소 넣으시면 됩니다 -->    
-    <td align=center><a href="https://github.com/rurruur">@nakkim</a></td>
+    <td align=center><a href="https://carnelian-pen-f2c.notion.site/0466bf143d5342c987aa70c12f38c6b1">@nakkim</a></td>
     <td align=center><a href="https://github.com/SihunLee-1016">@silee</a></td>
     <td align=center><a href="https://copper-way-3a6.notion.site/d9b8cebc255a4ba797e21b5bf4c0e929">@nheo</a></td>
     <td align=center><a href="https://github.com/reg0145">@donghyuk</a></td>
