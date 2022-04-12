@@ -77,7 +77,7 @@
   
   <tr align=center>
     <td align=left><a href="https://leetcode.com/problems/largest-number/">largest-number</a></td>
-    <td id= nakkim  ></td>
+    <td id= nakkim  >✅</td>
     <td id= sile    >✅</td>
     <td id= nheo    >✅</td>
     <td id= donghyuk></td>
