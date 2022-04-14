@@ -75,3 +75,13 @@ void quickSort(int *arr, int size, int (*cmp)(const void* left, const void* righ
 	quickSort(arr, right , cmp);
 	quickSort(arr + right + 1, size - right - 1,cmp);
 }
+
+char * largestNumber(int* nums, int numsSize){
+    char    *result;
+
+    quickSort(nums, numsSize, compare);
+    result = array_to_string(nums, numsSize);
+    if (result[0] == '0')
+        result[1] = '\0';
+    return (result);
+}
