@@ -13,7 +13,6 @@
 
 /*
  * n을 dividend로 나눌수 있을 때까지 나눈다.
- * n을 더이상 나눌 수 없을 경우 n을 반환한다.
  * */
 int	div(int n, int dividend)
 {
