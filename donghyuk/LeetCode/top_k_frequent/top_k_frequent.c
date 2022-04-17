@@ -45,6 +45,7 @@ void	count_nums(t_node *list, int *nums, int size)
 	while (idx < size)
 	{
 		list[cur_idx].val = nums[idx];
+		// [1,1,1,...] 배열의 동일한 값이 반복될 경우 카운트 또한 반복적으로 진행한다.
 		while (idx < size && list[cur_idx].val == nums[idx])
 		{
 			list[cur_idx].count++;
