@@ -25,7 +25,7 @@ void init(int *table)
 	table['X' % SIZE]  = 10;            // X
 	table['V' % SIZE]  = 5;             // V
 	table['I' % SIZE]  = 1;             // I
-    table[0x4D43 % SIZE] = 900 | FLAG;  // CM (0x4D43)
+	table[0x4D43 % SIZE] = 900 | FLAG;  // CM (0x4D43)
 	table[0x4443 % SIZE] = 400 | FLAG;  // CD
 	table[0x4358 % SIZE] = 90  | FLAG;  // XC
 	table[0x4C58 % SIZE] = 40  | FLAG;  // XL
