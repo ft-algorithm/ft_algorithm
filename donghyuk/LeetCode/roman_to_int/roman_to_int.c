@@ -5,7 +5,8 @@
  * Purpose  : Given a roman numeral, convert it to an integer.
  *
  * How to Solve?
- * 1.
+ * 1. 해시테이블(배열)에 로마문자별 값 저장
+ * 2. 로마문자별 해시테이블에 접근하여 값 출력 후 합산
  */
 
 #define SIZE 194
