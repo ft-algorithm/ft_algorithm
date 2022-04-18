@@ -1,59 +1,56 @@
-#include <stdio.h>
+/*
+ * Author   : donghyuk
+ * Date     : 2022.04.17
+ * leetcode : https://leetcode.com/problems/roman-to-integer/
+ * Purpose  : Given a roman numeral, convert it to an integer.
+ *
+ * How to Solve?
+ * 1.
+ */
 
-#define MAX 194
+#define SIZE 194
 #define FLAG 1024
-void init(int *arr)
+
+void init(int *table)
 {
 	int	idx;
 
 	idx = 0;
-	while (idx < MAX)
-		arr[idx++] = 0;
-	arr[77]  = 1000; // M
-	arr[185] = 900 | FLAG;  // CM
-	arr[68]  = 500;  // D
-	arr[15]  = 400 | FLAG;  // CD
-	arr[67]  = 100;  // C
-	arr[168] = 90 | FLAG;   // XC
-	arr[76]  = 50;   // L
-	arr[144] = 40 | FLAG;   // XL
-	arr[88]  = 10;   // X
-	arr[97]  = 9 | FLAG;     // IX
-	arr[86]  = 5;    // V
-	arr[167] = 4 | FLAG;    // IV
-	arr[73]  = 1;    // I
+	while (idx < SIZE)
+		table[idx++] = 0;
+	table['M' % SIZE]  = 1000;          // M
+	table['D' % SIZE]  = 500;           // D
+	table['C' % SIZE]  = 100;           // C
+	table['L' % SIZE]  = 50;            // L
+	table['X' % SIZE]  = 10;            // X
+	table['V' % SIZE]  = 5;             // V
+	table['I' % SIZE]  = 1;             // I
+    table[0x4D43 % SIZE] = 900 | FLAG;  // CM (0x4D43)
+	table[0x4443 % SIZE] = 400 | FLAG;  // CD
+	table[0x4358 % SIZE] = 90  | FLAG;  // XC
+	table[0x4C58 % SIZE] = 40  | FLAG;  // XL
+	table[0x5849 % SIZE] = 9   | FLAG;  // IX
+	table[0x5649 % SIZE] = 4   | FLAG;  // IV
 }
 
 int romanToInt(char * s){
+	int		table[SIZE];
 	int		total;
-	int		arr[MAX];
 	int		temp;
-	short	*p;
 
-	init(arr);
+	init(table);
 	total = 0;
 	while(*s)
 	{
-		p = (short *)s;
-        if (s[1] == '\0')
+        temp = table[((s[1] << 8) + s[0]) % SIZE];
+        if (temp & FLAG)
         {
-		    temp = arr[*p % MAX];
-            if (temp & FLAG)
-            {
-                total += temp & ~FLAG;
-                s++;
-            }
-            else
-                total += arr[*s % MAX];
+            total += temp & ~FLAG;
+            s++;
         }
         else
-            total += arr[*s % MAX];
+            total += table[*s % SIZE];
 		s++;
 	}
 	return (total);
-}
-
-int main()
-{
-	printf("%d", romanToInt("MCMXCIV"));
 }
