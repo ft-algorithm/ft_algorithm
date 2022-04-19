@@ -44,6 +44,18 @@ Node*   getCounts(int* nums, int numsSize)
     return (numCounts);
 }
 
+void swapInfo(Heap* heap, int index1, int index2)
+{
+    int tmp;
+    
+    tmp = heap->counts[index1].val;
+    heap->counts[index1].val = heap->counts[index2].val;
+    heap->counts[index2].val = tmp;
+    tmp = heap->counts[index1].count;
+    heap->counts[index1].count = heap->counts[index2].count;
+    heap->counts[index2].count = tmp;
+}
+
 // 힙 삽입 연산
 void insert(Heap* heap, Node info)
 {
@@ -59,27 +71,10 @@ void insert(Heap* heap, Node info)
     {
         if (heap->counts[parent].count >= heap->counts[curr].count)
             break ;
-        tmp = heap->counts[parent].count;
-        heap->counts[parent].count = heap->counts[curr].count;
-        heap->counts[curr].count = tmp;
-        tmp = heap->counts[parent].val;
-        heap->counts[parent].val = heap->counts[curr].val;
-        heap->counts[curr].val = tmp;
+        swapInfo(heap, parent, curr);
         curr = parent;
         parent = (curr - 1) / 2;
     }
-}
-
-void swapInfo(Heap* heap, int index1, int index2)
-{
-    int tmp;
-    
-    tmp = heap->counts[index1].val;
-    heap->counts[index1].val = heap->counts[index2].val;
-    heap->counts[index2].val = tmp;
-    tmp = heap->counts[index1].count;
-    heap->counts[index1].count = heap->counts[index2].count;
-    heap->counts[index2].count = tmp;
 }
 
 // 힙 루트 제거(가장 큰 카운트 값)
