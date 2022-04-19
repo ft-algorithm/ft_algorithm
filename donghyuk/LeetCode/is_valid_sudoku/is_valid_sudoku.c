@@ -34,7 +34,7 @@ int check_area(char **area, int row, int col, int boardSize)
 			if (area[row + row_idx][col + col_idx] == '.')
 				;
 			else if(table[area[row + row_idx][col + col_idx] - '0']++ > 0)
-			return (false);
+				return (false);
 		}
 	}
 	free(table);
