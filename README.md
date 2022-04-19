@@ -157,7 +157,7 @@
   <tr>
                             <!-- 노션 주소 넣으시면 됩니다 -->  
     <td></td>
-    <td align=center><a href="https://carnelian-pen-f2c.notion.site/0466bf143d5342c987aa70c12f38c6b1">@nakkim</a></td>
+    <td align=center><a href="https://carnelian-pen-f2c.notion.site/cb56df89f41a46b5874a267b517d6251">@nakkim</a></td>
     <td align=center><a href="https://github.com/SihunLee-1016">@silee</a></td>
     <td align=center><a href="https://copper-way-3a6.notion.site/d9b8cebc255a4ba797e21b5bf4c0e929">@nheo</a></td>
     <td align=center><a href="https://github.com/reg0145">@donghyuk</a></td>
