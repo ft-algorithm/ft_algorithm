@@ -118,7 +118,7 @@
     <td align=left><a href="https://leetcode.com/problems/ugly-number-ii/">ugly-number-ii</a></td>
     <td id= nakkim  >✅</td>
     <td id= sile    ></td>
-    <td id= nheo    ></td>
+    <td id= nheo    >✅</td>
     <td id= donghyuk>✅</td>
     <td id= jayoon  ></td>
   </tr>
@@ -127,7 +127,7 @@
     <td align=left><a href="https://leetcode.com/problems/top-k-frequent-elements/">top-k-frequent...</a></td>
     <td id= nakkim  >✅</td>
     <td id= sile    ></td>
-    <td id= nheo    ></td>
+    <td id= nheo    >⚠️</td>
     <td id= donghyuk>✅</td>
     <td id= jayoon  ></td>
   </tr>
@@ -136,7 +136,7 @@
     <td align=left><a href="https://leetcode.com/problems/roman-to-integer/">roman-to-integer</a></td>
     <td id= nakkim  >✅</td>
     <td id= sile    ></td>
-    <td id= nheo    ></td>
+    <td id= nheo    >✅</td>
     <td id= donghyuk>✅</td>
     <td id= jayoon  ></td>
   </tr>
@@ -145,7 +145,7 @@
     <td align=left><a href="https://leetcode.com/problems/valid-sudoku/">스도쿠</a></td>
     <td id= nakkim  >✅</td>
     <td id= sile    ></td>
-    <td id= nheo    ></td>
+    <td id= nheo    >✅</td>
     <td id= donghyuk>✅</td>
     <td id= jayoon  ></td>
   </tr>
